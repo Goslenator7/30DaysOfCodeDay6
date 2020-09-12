@@ -1,0 +1,27 @@
+function processData(input) {
+    //Enter your code here
+    var s= input.split("\n");
+    s.shift();
+    s.forEach(el=>{
+        var even=[];
+        var odd=[];
+        for(i=0;i<el.length;i+=2){
+                even.push(el.charAt(i));
+            }
+        for(j=1;j<el.length;j+=2){
+            odd.push(el.charAt(j));
+        }
+        console.log(even.join("") + " " + odd.join(""));
+    })
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
